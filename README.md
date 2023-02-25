@@ -1,1 +1,1 @@
-# C-Auto-master-music
+# C/CPP Auto-master-music
