@@ -35,7 +35,17 @@ int main(int argc, char* argv[]) {
     // TODO: implement compression and limiting using digital signal processing techniques
 
     // Adjust stereo width
-    // TODO: implement stereo width control using digital signal processing techniques
+    // calc coefs
+    tmp = 1/max(1 + width,2);
+    coef_M = 1 * tmp;
+    coef_S = width * tmp;
+
+    // then do this per sample
+    m = (in_left + in_right)*coef_M;
+    s = (in_right - in_left )*coef_S;
+
+    out_left = m - s;
+    out_right = m + s;
 
     // Normalize volume
     // TODO: implement volume normalization using digital signal processing techniques
