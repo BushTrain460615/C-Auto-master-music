@@ -46,6 +46,8 @@ int main(int argc, char* argv[]) {
 
     out_left = m - s;
     out_right = m + s;
+    out_left  /= 0.5 + coef_S;
+    out_right /= 0.5 + coef_S;
 
     // Normalize volume
     // TODO: implement volume normalization using digital signal processing techniques
